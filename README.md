@@ -141,7 +141,7 @@ echo htmlspecialchars($customer_name);
 ### **Lokale Entwicklungsumgebung**
 ```bash
 # 1. In Projektverzeichnis wechseln
-cd c:\DEV\LF10\Pizza
+cd .\Pizza
 
 # 2. PHP Built-in Server starten
 php -S localhost:8000
