@@ -1,0 +1,54 @@
+# Persönliche Daten und Bestellinformationen
+data/*.csv
+data/orders.csv
+data/order_items.csv
+
+# Temporäre Dateien
+*.tmp
+*.temp
+*.log
+
+# Betriebssystem-spezifische Dateien
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE/Editor-Dateien
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# PHP-spezifische Dateien
+.env
+.env.local
+.env.production
+composer.phar
+vendor/
+
+# Cache und temporäre Verzeichnisse
+cache/
+tmp/
+temp/
+
+# Backup-Dateien
+*.bak
+*.backup
+*.old
+
+# Windows-spezifische Dateien
+*.lnk
+
+# Konfigurationsdateien mit sensiblen Daten
+config.php
+settings.php
+database.php
+
+# Session-Dateien (falls verwendet)
+sessions/
+*.sess
+
+# Uploads (falls später hinzugefügt)
+uploads/private/
+uploads/customer_data/
