@@ -1,4 +1,4 @@
-# 🍕 Pizza Bestellsystem - Pizzeria Adrian
+# 🍕 Pizza Bestellsystem - Pizzeria Adriano
 ## Lernprojekt: HTML, CSS, PHP & CSV-Verarbeitung
 
 Dieses Projekt ist eine **vollständige Webanwendung** zur Demonstration von:

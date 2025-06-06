@@ -1,6 +1,6 @@
 <?php
 /**
- * PIZZERIA ADRIAN - BESTELLBESTÄTIGUNG (confirmation.php)
+ * PIZZERIA ADRIANO - BESTELLBESTÄTIGUNG (confirmation.php)
  * 
  * Diese Seite wird nach einer erfolgreichen Bestellung angezeigt.
  * Sie zeigt alle Bestelldetails und Kundeninformationen an.
@@ -34,14 +34,14 @@ $order = $_SESSION['last_order'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bestellung bestätigt - Pizzeria Adrian</title>
+    <title>Bestellung bestätigt - Pizzeria Adriano</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- HEADER mit Navigation -->
     <header>
         <div class="container">
-            <h1>🍕 Pizzeria Adrian</h1>
+            <h1>🍕 Pizzeria Adriano</h1>
             <nav>
                 <a href="index.php">Menu</a>
                 <!-- Warenkorb ist jetzt leer (0), da Bestellung abgeschlossen -->
@@ -55,7 +55,7 @@ $order = $_SESSION['last_order'];
         <!-- Erfolgsbestätigung -->
         <div class="order-confirmation">
             <h2>✅ Bestellung erfolgreich aufgegeben!</h2>
-            <p>Vielen Dank für Ihre Bestellung bei Pizzeria Adrian!</p>
+            <p>Vielen Dank für Ihre Bestellung bei Pizzeria Adriano!</p>
             
             <div class="order-number">
                 Bestellnummer: <?php echo htmlspecialchars($order['order_number']); ?>
@@ -117,7 +117,7 @@ $order = $_SESSION['last_order'];
         </div>
     </main>    <footer>
         <div class="container">
-            <p>&copy; 2025 Pizzeria Adrian. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2025 Pizzeria Adriano. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 

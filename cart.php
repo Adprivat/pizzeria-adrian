@@ -1,6 +1,6 @@
 <?php
 /**
- * PIZZERIA ADRIAN - WARENKORB & CHECKOUT (cart.php)
+ * PIZZERIA ADRIANO - WARENKORB & CHECKOUT (cart.php)
  * 
  * Diese Datei behandelt den Warenkorb und den Checkout-Prozess:
  * - Anzeige der Warenkorb-Inhalte
@@ -164,13 +164,13 @@ foreach ($_SESSION['cart'] as $item) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warenkorb - Pizzeria Adrian</title>
+    <title>Warenkorb - Pizzeria Adriano</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>    <!-- HEADER mit Navigation -->
     <header>
         <div class="container">
-            <h1>🍕 Pizzeria Adrian</h1>
+            <h1>🍕 Pizzeria Adriano</h1>
             <nav>
                 <a href="index.php">Menu</a>
                 <!-- Dynamische Warenkorb-Anzeige -->
@@ -305,7 +305,7 @@ foreach ($_SESSION['cart'] as $item) {
     <!-- FOOTER - Standard-Fußbereich -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Pizzeria Adrian. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2025 Pizzeria Adriano. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 </body>

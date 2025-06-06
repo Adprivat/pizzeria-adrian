@@ -1,6 +1,6 @@
 <?php
 /**
- * PIZZERIA ADRIAN - HAUPTSEITE (index.php)
+ * PIZZERIA ADRIANO - HAUPTSEITE (index.php)
  * 
  * Diese Datei stellt die Hauptseite der Pizza-Bestellanwendung dar.
  * Hier können Kunden Pizzen auswählen, konfigurieren und zum Warenkorb hinzufügen.
@@ -94,7 +94,7 @@ if ($_POST) {
     <meta charset="UTF-8">
     <!-- Responsive Design für mobile Geräte -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizza Bestellung - Pizzeria Adrian</title>
+    <title>Pizza Bestellung - Pizzeria Adriano</title>
     <!-- Einbindung der externen CSS-Datei für das Styling -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -102,7 +102,7 @@ if ($_POST) {
     <!-- HEADER-BEREICH mit Navigation -->
     <header>
         <div class="container">
-            <h1>🍕 Pizzeria Adrian</h1>
+            <h1>🍕 Pizzeria Adriano</h1>
             <nav>
                 <a href="index.php">Menu</a>
                 <!-- Dynamische Anzeige der Warenkorb-Anzahl mit PHP -->
@@ -120,7 +120,7 @@ if ($_POST) {
 
         <!-- HERO-SEKTION mit Willkommensnachricht -->
         <section class="hero">
-            <h2>Willkommen bei Pizzeria Adrian!</h2>
+            <h2>Willkommen bei Pizzeria Adriano!</h2>
             <p>Bestellen Sie jetzt Ihre liebste Pizza - frisch aus dem Ofen!</p>
         </section>
 
@@ -186,7 +186,7 @@ if ($_POST) {
     <!-- FOOTER-BEREICH -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Pizzeria Adrian. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2025 Pizzeria Adriano. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 </body>

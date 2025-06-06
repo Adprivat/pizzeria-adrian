@@ -1,6 +1,6 @@
 <?php
 /**
- * PIZZERIA ADRIAN - ADMIN-PANEL (admin.php)
+ * PIZZERIA ADRIANO - ADMIN-PANEL (admin.php)
  * 
  * Diese Seite stellt ein einfaches Admin-Interface zur Verfügung,
  * um alle Bestellungen und Bestelldetails anzuzeigen.
@@ -163,7 +163,7 @@ if (file_exists('data/order_items.csv')) {
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Pizzeria Adrian. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2025 Pizzeria Adriano. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 </body>
