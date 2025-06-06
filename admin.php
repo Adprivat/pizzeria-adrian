@@ -1,29 +1,52 @@
 <?php
-// Simple admin page to view orders (in a real application, this would need proper authentication)
+/**
+ * PIZZERIA ADRIAN - ADMIN-PANEL (admin.php)
+ * 
+ * Diese Seite stellt ein einfaches Admin-Interface zur Verfügung,
+ * um alle Bestellungen und Bestelldetails anzuzeigen.
+ * 
+ * Wichtige Konzepte:
+ * - CSV-Dateien lesen und verarbeiten
+ * - Array-Kombinierung mit array_combine()
+ * - Relationale Datenverknüpfung zwischen zwei CSV-Dateien
+ * - Tabellarische Darstellung von Daten
+ * 
+ * SICHERHEITSHINWEIS: In einer realen Anwendung würde hier
+ * eine Benutzerauthentifizierung erforderlich sein!
+ */
 
+// Arrays für Bestellungen und Bestellpositionen initialisieren
 $orders = [];
 $order_items = [];
 
-// Read orders
+// BESTELLUNGEN AUS CSV LESEN (orders.csv)
 if (file_exists('data/orders.csv')) {
     $handle = fopen('data/orders.csv', 'r');
-    $headers = fgetcsv($handle); // Skip header
+    $headers = fgetcsv($handle);  // Erste Zeile = Spaltenüberschriften
+    
+    // Alle Datenzeilen einlesen und mit Headern kombinieren
     while (($data = fgetcsv($handle)) !== FALSE) {
+        // array_combine() erstellt assoziatives Array: [header => wert]
         $orders[] = array_combine($headers, $data);
     }
     fclose($handle);
 }
 
-// Read order items
+// BESTELLPOSITIONEN AUS CSV LESEN (order_items.csv)
 if (file_exists('data/order_items.csv')) {
     $handle = fopen('data/order_items.csv', 'r');
-    $headers = fgetcsv($handle); // Skip header
+    $headers = fgetcsv($handle);  // Erste Zeile = Spaltenüberschriften
+    
     while (($data = fgetcsv($handle)) !== FALSE) {
         $order_items[] = array_combine($headers, $data);
     }
     fclose($handle);
 }
 ?>
+<!-- 
+    HTML-TEIL DES ADMIN-PANELS
+    Tabellarische Darstellung aller Bestellungen und Details
+-->
 <!DOCTYPE html>
 <html lang="de">
 <head>

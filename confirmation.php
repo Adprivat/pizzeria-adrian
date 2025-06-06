@@ -1,33 +1,58 @@
 <?php
+/**
+ * PIZZERIA ADRIAN - BESTELLBESTÄTIGUNG (confirmation.php)
+ * 
+ * Diese Seite wird nach einer erfolgreichen Bestellung angezeigt.
+ * Sie zeigt alle Bestelldetails und Kundeninformationen an.
+ * 
+ * Wichtige Konzepte:
+ * - Session-Daten abrufen und anzeigen
+ * - Sicherheitscheck (Umleitung bei fehlenden Daten)
+ * - Strukturierte Darstellung von Bestellinformationen
+ * - Session-Cleanup nach Anzeige
+ */
+
+// Session starten für Zugriff auf Bestelldaten
 session_start();
 
-// Check if there's a last order
+// SICHERHEITSCHECK: Überprüfung ob Bestelldaten vorhanden sind
+// Falls keine letzte Bestellung in der Session existiert, zurück zur Startseite
 if (!isset($_SESSION['last_order'])) {
     header('Location: index.php');
     exit;
 }
 
+// Bestelldaten aus Session abrufen
 $order = $_SESSION['last_order'];
 ?>
+<!-- 
+    HTML-TEIL DER BESTÄTIGUNGSSEITE
+    Anzeige der Bestelldetails und Kundeninformationen
+-->
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Bestellung bestätigt - Pizzeria Adrian</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestellung bestätigt - Pizzeria Adrian</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- HEADER mit Navigation -->
     <header>
         <div class="container">
             <h1>🍕 Pizzeria Adrian</h1>
             <nav>
                 <a href="index.php">Menu</a>
+                <!-- Warenkorb ist jetzt leer (0), da Bestellung abgeschlossen -->
                 <a href="cart.php" class="cart-link">Warenkorb (0)</a>
             </nav>
         </div>
     </header>
 
+    <!-- HAUPTINHALT der Bestätigungsseite -->
     <main class="container">
+        <!-- Erfolgsbestätigung -->
         <div class="order-confirmation">
             <h2>✅ Bestellung erfolgreich aufgegeben!</h2>
             <p>Vielen Dank für Ihre Bestellung bei Pizzeria Adrian!</p>

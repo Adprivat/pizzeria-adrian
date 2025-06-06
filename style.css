@@ -1,56 +1,78 @@
+/* 
+   PIZZERIA ADRIAN - HAUPTSTYLESHEET (style.css)
+   
+   Dieses CSS implementiert ein modernes, responsives Design für die Pizza-Bestellanwendung.
+   
+   Verwendete Technologien:
+   - CSS Grid & Flexbox für Layout
+   - CSS Custom Properties (Variablen)
+   - Mobile-First Responsive Design
+   - CSS Transitions für Interaktivität
+   - Moderne CSS3-Features (Gradients, Shadows, etc.)
+*/
+
+/* GLOBAL RESET - Entfernt Browser-Standard-Styles */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box;  /* Padding/Border in width/height einrechnen */
 }
 
+/* BODY - Grundlegende Typografie und Layout */
 body {
     font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
+    line-height: 1.6;                    /* Verbesserte Lesbarkeit */
+    color: #333;                         /* Dunkle Schriftfarbe */
+    background-color: #f8f9fa;           /* Heller Hintergrund */
 }
 
+/* CONTAINER - Zentrierte Inhalts-Wrapper mit maximaler Breite */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 1200px;    /* Maximale Breite für große Bildschirme */
+    margin: 0 auto;       /* Horizontale Zentrierung */
+    padding: 0 20px;      /* Seitlicher Abstand */
 }
 
-/* Header */
+/* HEADER-BEREICH - Navigation und Branding */
 header {
+    /* CSS Gradient für modernen Look */
     background: linear-gradient(135deg, #d32f2f, #f44336);
     color: white;
     padding: 1rem 0;
+    /* Subtiler Schatten für Tiefe */
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
+/* Header-Layout mit Flexbox */
 header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex;                    /* Flexbox-Layout */
+    justify-content: space-between;   /* Platz zwischen Logo und Navigation */
+    align-items: center;              /* Vertikale Zentrierung */
 }
 
+/* Header-Überschrift (Logo) */
 header h1 {
     font-size: 2rem;
     font-weight: bold;
 }
 
+/* NAVIGATION - Styling für Menü-Links */
 nav a {
     color: white;
-    text-decoration: none;
-    margin-left: 2rem;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    text-decoration: none;            /* Unterstreichung entfernen */
+    margin-left: 2rem;                /* Abstand zwischen Links */
+    padding: 0.5rem 1rem;             /* Innenabstand für Button-Look */
+    border-radius: 5px;               /* Abgerundete Ecken */
+    transition: background-color 0.3s; /* Smooth Hover-Effekt */
 }
 
+/* Navigation Hover-Effekte */
 nav a:hover,
 .cart-link {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.2);  /* Semi-transparenter Hintergrund */
 }
 
-/* Messages */
+/* NACHRICHTEN-SYSTEM - Styling für Erfolgs- und Fehlermeldungen */
 .message {
     padding: 1rem;
     margin: 1rem 0;
@@ -58,25 +80,27 @@ nav a:hover,
     text-align: center;
 }
 
+/* Erfolgsmeldungen (grün) */
 .message.success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+    background-color: #d4edda;    /* Heller grüner Hintergrund */
+    color: #155724;               /* Dunkler grüner Text */
+    border: 1px solid #c3e6cb;    /* Grüner Rand */
 }
 
+/* Fehlermeldungen (rot) */
 .message.error {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
+    background-color: #f8d7da;    /* Heller roter Hintergrund */
+    color: #721c24;               /* Dunkler roter Text */
+    border: 1px solid #f5c6cb;    /* Roter Rand */
 }
 
-/* Hero Section */
+/* HERO-SEKTION - Willkommensbereich der Startseite */
 .hero {
     text-align: center;
-    padding: 3rem 0;
-    background: white;
+    padding: 3rem 0;              /* Großzügiger vertikaler Abstand */
+    background: white;            /* Weißer Hintergrund */
     margin: 2rem 0;
-    border-radius: 10px;
+    border-radius: 10px;          /* Abgerundete Ecken */
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
@@ -91,269 +115,308 @@ nav a:hover,
     color: #666;
 }
 
-/* Pizza Menu */
+/* PIZZA-MENÜ-BEREICH - Darstellung der verfügbaren Pizzen */
 .pizza-menu {
-    margin: 2rem 0;
+    margin: 2rem 0;               /* Vertikaler Abstand zum anderen Content */
 }
 
+/* Menü-Überschrift */
 .pizza-menu h2 {
-    text-align: center;
+    text-align: center;           /* Zentrierte Überschrift */
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: #d32f2f;
+    color: #d32f2f;               /* Markenfarbe verwenden */
 }
 
+/* PIZZA-GRID - CSS Grid Layout für responsive Kartenanordnung */
 .pizza-grid {
-    display: grid;
+    display: grid;                /* CSS Grid aktivieren */
+    /* auto-fit: Automatische Anpassung der Spaltenanzahl */
+    /* minmax(350px, 1fr): Mindestens 350px, maximal verfügbarer Platz */
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+    gap: 2rem;                    /* Abstand zwischen Grid-Elementen */
     margin-bottom: 2rem;
 }
 
+/* PIZZA-KARTE - Einzelne Pizza-Darstellung */
 .pizza-card {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    overflow: hidden;
+    background: white;            /* Weißer Hintergrund für Kontrast */
+    border-radius: 10px;          /* Abgerundete Ecken für modernen Look */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);  /* Subtiler Schatten für Tiefe */
+    overflow: hidden;             /* Verhindert, dass Inhalte über Rand hinausragen */
+    /* CSS Transitions für smooth Animationen */
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* HOVER-EFFEKT - Interaktive Animation beim Überfahren */
 .pizza-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    transform: translateY(-5px);  /* Karte nach oben bewegen */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);  /* Stärkerer Schatten für Höhe */
 }
 
+/* PIZZA-BILD - Responsives Bildverhalten */
 .pizza-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+    width: 100%;                  /* Volle Breite der Karte */
+    height: 200px;                /* Feste Höhe für einheitliches Layout */
+    object-fit: cover;            /* Bildausschnitt anpassen ohne Verzerrung */
 }
 
+/* PIZZA-INFORMATIONEN - Textbereich der Karte */
 .pizza-info {
-    padding: 1.5rem;
+    padding: 1.5rem;              /* Innenabstand für bessere Lesbarkeit */
 }
 
+/* Pizza-Name */
 .pizza-info h3 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: #d32f2f;
+    color: #d32f2f;               /* Markenfarbe für Namen */
 }
 
+/* PREISANZEIGE - Flexbox Layout für Größen und Preise */
 .prices {
-    display: flex;
-    justify-content: space-between;
+    display: flex;                /* Flexbox für horizontale Anordnung */
+    justify-content: space-between;  /* Gleichmäßige Verteilung */
     margin-bottom: 1rem;
-    font-weight: bold;
-    color: #666;
+    font-weight: bold;            /* Fettschrift für bessere Sichtbarkeit */
+    color: #666;                  /* Dezente Farbe */
 }
 
+/* Einzelne Preis-Tags */
 .prices span {
-    background-color: #f8f9fa;
-    padding: 0.3rem 0.6rem;
-    border-radius: 5px;
-    font-size: 0.9rem;
+    background-color: #f8f9fa;    /* Heller Hintergrund für Abgrenzung */
+    padding: 0.3rem 0.6rem;       /* Kompakter Innenabstand */
+    border-radius: 5px;           /* Abgerundete Ecken */
+    font-size: 0.9rem;            /* Etwas kleinere Schrift */
 }
 
-/* Forms */
+/* FORMULARE - Styling für Bestellformulare und Eingabefelder */
 .order-form {
-    margin-top: 1rem;
+    margin-top: 1rem;             /* Abstand zum vorherigen Content */
 }
 
+/* FORM-GRUPPE - Container für Label und Input */
 .form-group {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem;          /* Vertikaler Abstand zwischen Feldern */
 }
 
+/* FORM-LABELS - Beschriftungen für Eingabefelder */
 .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: #555;
+    display: block;               /* Block-Element für neue Zeile */
+    margin-bottom: 0.5rem;        /* Abstand zum Input-Feld */
+    font-weight: bold;            /* Fettschrift für bessere Sichtbarkeit */
+    color: #555;                  /* Dezente dunkle Farbe */
 }
 
+/* CHECKBOX-STYLING - Spezielle Behandlung für Checkboxen */
 .form-group input[type="checkbox"] {
-    margin-right: 0.5rem;
+    margin-right: 0.5rem;         /* Abstand zum nachfolgenden Text */
 }
 
+/* INPUT-FELDER - Einheitliches Styling für alle Eingabetypen */
 select, input[type="text"], input[type="email"], input[type="tel"], textarea {
-    width: 100%;
-    padding: 0.7rem;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: border-color 0.3s;
+    width: 100%;                  /* Volle Breite des Containers */
+    padding: 0.7rem;              /* Innenabstand für bessere Bedienbarkeit */
+    border: 2px solid #ddd;       /* Dezenter Rand */
+    border-radius: 5px;           /* Abgerundete Ecken */
+    font-size: 1rem;              /* Standardschriftgröße */
+    transition: border-color 0.3s; /* Smooth Farbübergänge */
 }
 
+/* FOCUS-STATE - Aktiver Zustand der Eingabefelder */
 select:focus, input:focus, textarea:focus {
-    outline: none;
-    border-color: #d32f2f;
+    outline: none;                /* Standard-Browser-Outline entfernen */
+    border-color: #d32f2f;        /* Markenfarbe bei Fokus */
 }
 
-/* Buttons */
+/* BUTTON-SYSTEM - Wiederverwendbare Button-Komponenten */
 .btn {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
+    display: inline-block;        /* Inline-Block für flexible Verwendung */
+    padding: 0.8rem 1.5rem;       /* Großzügiger Innenabstand */
+    border: none;                 /* Entfernt Standard-Button-Rand */
+    border-radius: 5px;           /* Abgerundete Ecken */
+    text-decoration: none;        /* Keine Unterstreichung bei Links */
+    text-align: center;           /* Zentrierter Text */
+    cursor: pointer;              /* Zeiger-Cursor für Interaktivität */
     font-size: 1rem;
-    font-weight: bold;
-    transition: all 0.3s;
+    font-weight: bold;            /* Fettschrift für bessere Lesbarkeit */
+    transition: all 0.3s;         /* Smooth Übergänge für alle Eigenschaften */
 }
 
+/* PRIMÄRER BUTTON - Haupt-Aktionsbutton mit Gradient */
 .btn-primary {
+    /* CSS Gradient für ansprechenden Look */
     background: linear-gradient(135deg, #d32f2f, #f44336);
-    color: white;
+    color: white;                 /* Weißer Text für Kontrast */
 }
 
+/* PRIMÄRER BUTTON HOVER - Interaktive Effekte */
 .btn-primary:hover {
+    /* Dunklerer Gradient bei Hover */
     background: linear-gradient(135deg, #b71c1c, #d32f2f);
-    transform: translateY(-2px);
+    transform: translateY(-2px);  /* Leichte Anhebung für 3D-Effekt */
 }
 
+/* SEKUNDÄRER BUTTON - Alternative Aktion */
 .btn-secondary {
-    background-color: #6c757d;
+    background-color: #6c757d;    /* Neutrale graue Farbe */
     color: white;
 }
 
 .btn-secondary:hover {
-    background-color: #5a6268;
+    background-color: #5a6268;    /* Dunkleres Grau bei Hover */
 }
 
+/* ERFOLGS-BUTTON - Für positive Aktionen */
 .btn-success {
-    background-color: #28a745;
+    background-color: #28a745;    /* Grüne Farbe für Erfolg */
     color: white;
 }
 
 .btn-success:hover {
-    background-color: #218838;
+    background-color: #218838;    /* Dunkleres Grün bei Hover */
 }
 
-/* Cart */
+/* WARENKORB-BEREICH - Styling für Bestellübersicht */
 .cart-summary {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    margin: 2rem 0;
+    background: white;            /* Weißer Hintergrund für Klarheit */
+    padding: 2rem;                /* Großzügiger Innenabstand */
+    border-radius: 10px;          /* Abgerundete Ecken */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);  /* Subtiler Schatten */
+    margin: 2rem 0;               /* Vertikaler Abstand */
 }
 
+/* WARENKORB-ITEM - Einzelne Bestellposition */
 .cart-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
-    border-bottom: 1px solid #eee;
+    display: flex;                /* Flexbox für Layout */
+    justify-content: space-between;  /* Platz zwischen Info und Preis */
+    align-items: center;          /* Vertikale Zentrierung */
+    padding: 1rem 0;              /* Vertikaler Innenabstand */
+    border-bottom: 1px solid #eee; /* Trennlinie zwischen Items */
 }
 
+/* Letztes Item ohne Trennlinie */
 .cart-item:last-child {
-    border-bottom: none;
+    border-bottom: none;          /* Keine Linie am Ende */
 }
 
+/* ITEM-INFORMATIONEN - Produktdetails */
 .cart-item-info h4 {
-    margin-bottom: 0.5rem;
-    color: #d32f2f;
+    margin-bottom: 0.5rem;        /* Abstand zur Beschreibung */
+    color: #d32f2f;               /* Markenfarbe für Produktname */
 }
 
 .cart-item-info p {
-    color: #666;
-    font-size: 0.9rem;
+    color: #666;                  /* Dezente Farbe für Details */
+    font-size: 0.9rem;            /* Kleinere Schrift für Zusatzinfo */
 }
 
+/* ITEM-PREIS - Preisanzeige rechts */
 .cart-item-price {
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: #d32f2f;
+    font-weight: bold;            /* Fettschrift für Betonung */
+    font-size: 1.1rem;            /* Etwas größere Schrift */
+    color: #d32f2f;               /* Markenfarbe für Preise */
 }
 
+/* GESAMTSUMME - Bestellsumme am Ende */
 .cart-total {
-    text-align: right;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 2px solid #d32f2f;
+    text-align: right;            /* Rechtsbündige Ausrichtung */
+    margin-top: 1rem;             /* Abstand zu den Items */
+    padding-top: 1rem;            /* Innenabstand oben */
+    border-top: 2px solid #d32f2f; /* Markante Trennlinie in Markenfarbe */
 }
 
 .cart-total h3 {
-    font-size: 1.5rem;
-    color: #d32f2f;
+    font-size: 1.5rem;            /* Große Schrift für Gesamtsumme */
+    color: #d32f2f;               /* Markenfarbe für Betonung */
 }
 
-/* Customer Form */
+/* KUNDEN-FORMULAR - Styling für Bestelldaten-Eingabe */
 .customer-form {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    margin: 2rem 0;
+    background: white;            /* Weißer Hintergrund für Klarheit */
+    padding: 2rem;                /* Großzügiger Innenabstand */
+    border-radius: 10px;          /* Abgerundete Ecken */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);  /* Subtiler Schatten */
+    margin: 2rem 0;               /* Vertikaler Abstand */
 }
 
+/* FORM-ROW - Zwei-Spalten-Layout für Formulare */
 .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    display: grid;                /* CSS Grid für Layout */
+    grid-template-columns: 1fr 1fr; /* Zwei gleich große Spalten */
+    gap: 1rem;                    /* Abstand zwischen Spalten */
 }
 
-/* Order Confirmation */
+/* BESTELLBESTÄTIGUNG - Styling für Erfolgsmeldung */
 .order-confirmation {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    margin: 2rem 0;
-    text-align: center;
+    background: white;            /* Weißer Hintergrund */
+    padding: 2rem;                /* Großzügiger Innenabstand */
+    border-radius: 10px;          /* Abgerundete Ecken */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);  /* Subtiler Schatten */
+    margin: 2rem 0;               /* Vertikaler Abstand */
+    text-align: center;           /* Zentrierte Ausrichtung */
 }
 
+/* Bestätigungs-Überschrift */
 .order-confirmation h2 {
-    color: #28a745;
-    margin-bottom: 1rem;
+    color: #28a745;               /* Grüne Farbe für Erfolg */
+    margin-bottom: 1rem;          /* Abstand zum folgenden Content */
 }
 
+/* BESTELLNUMMER - Hervorhebung der Bestellnummer */
 .order-number {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #d32f2f;
-    margin: 1rem 0;
+    font-size: 1.5rem;            /* Große Schrift für Betonung */
+    font-weight: bold;            /* Fettschrift */
+    color: #d32f2f;               /* Markenfarbe für Wichtigkeit */
+    margin: 1rem 0;               /* Vertikaler Abstand */
 }
 
-/* Footer */
+/* FOOTER - Fußbereich der Website */
 footer {
-    background-color: #343a40;
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 3rem;
+    background-color: #343a40;    /* Dunkler Hintergrund für Kontrast */
+    color: white;                 /* Weißer Text */
+    text-align: center;           /* Zentrierte Ausrichtung */
+    padding: 2rem 0;              /* Großzügiger vertikaler Abstand */
+    margin-top: 3rem;             /* Abstand zum Hauptinhalt */
 }
 
-/* Responsive */
+/* RESPONSIVE DESIGN - Mobile-First Ansatz für verschiedene Bildschirmgrößen */
+/* Media Query für Tablets und kleinere Desktop-Bildschirme */
 @media (max-width: 768px) {
+    /* Container-Anpassung für kleinere Screens */
     .container {
-        padding: 0 15px;
+        padding: 0 15px;          /* Weniger seitlicher Abstand */
     }
     
+    /* HEADER-LAYOUT - Umbruch auf Stack-Layout */
     header .container {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: column;   /* Vertikale Anordnung statt horizontal */
+        gap: 1rem;                /* Abstand zwischen Logo und Navigation */
     }
     
+    /* NAVIGATION - Kompaktere Navigation */
     nav a {
-        margin: 0 0.5rem;
+        margin: 0 0.5rem;         /* Weniger Abstand zwischen Links */
     }
     
+    /* PIZZA-GRID - Einzelspaltige Darstellung */
     .pizza-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Nur eine Spalte für mobile Geräte */
     }
     
+    /* FORMULARE - Einspaltige Anordnung */
     .form-row {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Einzelspaltige Formular-Zeilen */
     }
     
+    /* HERO-BEREICH - Kleinere Überschrift */
     .hero h2 {
-        font-size: 2rem;
+        font-size: 2rem;          /* Reduzierte Schriftgröße für mobile */
     }
     
+    /* PREISE - Vertikale Anordnung statt horizontal */
     .prices {
-        flex-direction: column;
-        gap: 0.5rem;
+        flex-direction: column;   /* Vertikale Stapelung */
+        gap: 0.5rem;              /* Abstand zwischen Preis-Items */
     }
 }
