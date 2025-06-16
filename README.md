@@ -285,6 +285,4 @@ echo "Ausführungszeit: " . ($end_time - $start_time) . " Sekunden";
 
 ---
 
-> **🎯 Lernziel erreicht:** Sie haben erfolgreich eine vollständige Webanwendung mit HTML, CSS, PHP und CSV-Verarbeitung implementiert und verstehen die Grundlagen für professionelle Webentwicklung!
-
 **Made with ❤️ for learning web development**
