@@ -8,10 +8,6 @@ Dieses Projekt ist eine **vollständige Webanwendung** zur Demonstration von:
 - **Session-Management** für Warenkorb-Funktionalität
 - **Responsive Design** für Mobile & Desktop
 
-> **Zielgruppe:** Entwickler, die praktische Erfahrungen mit Web-Technologien sammeln möchten
-> 
-> **Lernziel:** Verstehen der Zusammenarbeit zwischen Frontend, Backend und Datenverarbeitung
-
 ## 🎯 Lernziele & Technische Konzepte
 
 ### **HTML5 & Semantic Web**
